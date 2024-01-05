@@ -28,4 +28,6 @@ int main(){
     }
 
 }
-//배운내용 sstream 이랑 ,split 하는법
+//처음 map으로 해봤는데 찾아보니 런타임 난다고 했음 그래서 set으로 하는법을 배움
+//배운내용 sstream 이랑 ,split 하는법 ,set
+
