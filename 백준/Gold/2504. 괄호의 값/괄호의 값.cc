@@ -1,3 +1,5 @@
+//if 조건의 순서에 따라서 런타임이 발생할수도 있음
+
 #include <iostream>
 #include <string>
 #include <stack>
