@@ -1,61 +1,60 @@
-#include <iostream> 
+#include <iostream>
 #include <string>
 #include <stack>
- 
+
 using namespace std;
- 
+
 string str;
-stack<char> s;
- 
-int main(void) {
-    cin >> str;
- 
-    int answer = 0, temp = 1;
-    for(int i = 0; i < str.length(); i++) {
-        if(str[i] == '(') {
-            temp *= 2;
-            s.push('(');
+stack <char> st;
+
+int main() {
+    cin>>str;
+
+    int ans=0,tmp=1;
+    for(int i=0;i<str.size();i++){
+        if(str[i]=='('){
+            tmp*=2;
+            st.push('(');
         }
-        else if(str[i] == '[') {
-            temp *= 3;
-            s.push('[');
+        else if(str[i]=='['){
+            tmp*=3;
+            st.push('[');
         }
-        else if(str[i] == ')') {
-            if(s.empty() || s.top() != '(') {  
-                answer = 0;
+        else if(str[i]==')'){
+            if(st.empty() ||st.top()!='('){
+                ans=0;
                 break;
             }
-            if(str[i-1] == '(') {
-                answer += temp;
-                temp /= 2;
-                s.pop();
+            else if(str[i-1]=='('){
+                ans+=tmp;
+                tmp/=2;
+                st.pop();
             }
             else {
-                temp /= 2;
-                s.pop();
+                tmp/=2;
+                st.pop();
             }
         }
-        else if(str[i] == ']') {
-            if(s.empty() || s.top() != '[') {   
-                answer = 0;
+        else if(str[i]==']'){
+            if(st.empty() || st.top()!='['){
+                ans=0;
                 break;
             }
-            if(str[i-1] == '[') {
-                answer += temp;
-                temp /= 3;
-                s.pop();
+            else if(str[i-1]=='['){
+                ans+=tmp;
+                tmp/=3;
+                st.pop();
             }
             else {
-                temp /= 3;
-                s.pop();
+                tmp/=3;
+                st.pop();
             }
-}
+        }        
     }
 
-if(!s.empty()) answer = 0;  
+    if(!st.empty()) ans=0;
 
-cout << answer << "\n";
+    cout<<ans<<"\n";   
+    return 0; 
 
-return 0;
-}
-
+}     
