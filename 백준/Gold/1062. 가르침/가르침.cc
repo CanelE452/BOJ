@@ -1,3 +1,9 @@
+// 비트마스킹으로 알파벳 중복을 막는 방법도 있음
+// 추가 cheked |=1<<(중복 알파벳-'a');
+// 삭제 checked &= ~(1<<i)
+// 확인 checked & (1<<i) 
+
+
 #include <iostream>
 #include<vector>
 #include <string>
