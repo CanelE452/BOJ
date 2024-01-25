@@ -1,3 +1,7 @@
+// vector<int> dist(1001, INF);
+// 벡터는 초기값을 정할수 있다
+//배열을 fill_n으로 정의할수 있
+
 #include <iostream>
 #include <queue>
 
