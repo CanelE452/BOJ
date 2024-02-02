@@ -1,3 +1,9 @@
+//<크루스칼 알고리즘 코드>
+
+
+// union-find 기법을 쓴다
+// 가장 작은 가중치순으로 노드들이 순환하지 않음을 만족하면서 더하면 된다
+
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -45,3 +51,54 @@ int main(){
     }
     cout<<ans;
 }
+
+
+//---------------------------------------------------------------------
+
+//<프림 알고리즘 코드>
+
+
+// 우선순위큐를 사용
+// 다익스트라와 비슷
+// 그래프를 넣고 우선순위 큐에 처음 넣고 방문 기록과 pq안에 있는 값들 다시 pq 에 넘
+
+// #include <iostream>
+// #include <vector>
+// #include <queue>
+// #define INF 1e9
+// using namespace std;
+
+// typedef pair<int,int> pii;
+// long long ans;
+// bool visited[10001];
+// vector<pii> graph[10001];
+// priority_queue <pii,vector<pii>,greater<pii>> pq;
+
+// int main(){
+//     int v,e; cin>>v>>e;
+
+//     for(int i=0;i<e;i++){
+//         int a,b,c; cin>>a>>b>>c;
+//         graph[a].push_back({b,c});
+//         graph[b].push_back({a,c});
+//     }
+//     pq.push({0,1});
+
+//     while(!pq.empty()){
+//         int weight=pq.top().first;
+//         int cur=pq.top().second;
+        
+//         pq.pop();
+
+//         if(visited[cur]) continue; visited[cur]=true;
+//         ans+=weight;
+
+//         for(int i=0;i<graph[cur].size();i++){
+//             int next_n=graph[cur][i].first;
+//             int next_w=graph[cur][i].second;
+
+//             pq.push({next_w,next_n});
+//         }
+//     }
+//     cout<<ans;
+// }
