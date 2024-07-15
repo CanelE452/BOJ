@@ -1,34 +1,30 @@
 #include <iostream>
-#include <map>
-#include <vector>
 
 using namespace std;
 
 int N,M; 
- map<int,int> m;
- vector<int> v;
+bool visited[9]={0,};
+int arr[9]={0,};
+
 
 void fun(int pos){
     if(pos==M){
-        for(int ans:v) cout<<ans<<" ";
+        for(int i=0;i<M;i++) cout<<arr[i]<<" ";
         cout<<"\n";
         return;
     }
     for(int i=1;i<=N;i++){
-        if(m[i]==0){
-            v.push_back(i);
-            m[i]=1;
+        if(!visited[i]){
+            arr[pos]=i;
+            
+            visited[i]=true;
             fun(pos+1);
-            v.pop_back();
-            m[i]=0;
+            visited[i]=false;
         }
     }
-
 }
 
 int main(){
     cin>>N>>M;
-    for(int i=1;i<=N;i++) m.insert({i,0});
     fun(0);
-
 }
